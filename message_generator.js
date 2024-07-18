@@ -1,27 +1,4 @@
-const drivers1 = [
-    "Lewis Hamilton",
-    "Max Verstappen",
-    "Charles Leclerc",
-    "Fernando Alonso",
-    "Nico Hulkenber",
-    "Kevin Magnussen",
-    "Esteban Ocon",
-    "Pierre Gasly",
-    "Logan Sargeant",
-    "Alex Albon",
-    "Carlos Sainz",
-    "George Russell",
-    "Yuki Tsunoda",
-    "Daniel Ricciardo",
-    "Zhou Guanyu",
-    "Valterri Bottas",
-    "Sergio Perez",
-    "Lance Stroll",
-    "Lando Norris",
-    "Oscar Piastri"
-];
-
-const drivers2 = [
+const drivers = [
     "Lewis Hamilton",
     "Max Verstappen",
     "Charles Leclerc",
@@ -76,8 +53,8 @@ function getRandomElement(arr) {
 }
 
 document.getElementById('generateButton').addEventListener('click', () => {
-    const driver1 = getRandomElement(drivers1);
-    const driver2 = getRandomElement(drivers2);
+    const driver1 = getRandomElement(drivers);
+    const driver2 = getRandomElement(drivers.filter(driver => driver !== driver1));
     const team = getRandomElement(teams);
     const principal = getRandomElement(principals);
 
