@@ -55,10 +55,20 @@ function getRandomElement(arr) {
 document.getElementById('generateButton').addEventListener('click', () => {
     const driver1 = getRandomElement(drivers);
     document.getElementById('driver1').textContent = driver1;
+        // Automatically generate a different driver for driver2 if driver2 is already selected
+        let driver2;
+        do {
+            driver2 = getRandomElement(drivers);
+        } while (driver2 === driver1);
+        document.getElementById('driver2').textContent = driver2;
 });
 
 document.getElementById('generateButton').addEventListener('click', () => {
-    const driver2 = getRandomElement(drivers.filter(driver => driver !== driver1));
+    let driver1 = document.getElementById('driver1').textContent;
+    let driver2;
+    do {
+        driver2 = getRandomElement(drivers);
+    } while (driver2 === driver1);
     document.getElementById('driver2').textContent = driver2;
 });
 
