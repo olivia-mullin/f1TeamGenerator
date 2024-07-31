@@ -52,32 +52,32 @@ function getRandomElement(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
-document.getElementById('generateButton').addEventListener('click', () => {
-    const driver1 = getRandomElement(drivers);
-    document.getElementById('driver1').textContent = driver1;
-        // Automatically generate a different driver for driver2 if driver2 is already selected
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('generateDriver1Button').addEventListener('click', () => {
+        const driver1 = getRandomElement(drivers);
+        document.getElementById('driver1').textContent = driver1;
+        // Clear driver2 if it matches driver1
+        if (document.getElementById('driver2').textContent === driver1) {
+            document.getElementById('driver2').textContent = '';
+        }
+    });
+
+    document.getElementById('generateDriver2Button').addEventListener('click', () => {
+        const driver1 = document.getElementById('driver1').textContent;
         let driver2;
         do {
             driver2 = getRandomElement(drivers);
         } while (driver2 === driver1);
         document.getElementById('driver2').textContent = driver2;
-});
+    });
 
-document.getElementById('generateButton').addEventListener('click', () => {
-    let driver1 = document.getElementById('driver1').textContent;
-    let driver2;
-    do {
-        driver2 = getRandomElement(drivers);
-    } while (driver2 === driver1);
-    document.getElementById('driver2').textContent = driver2;
-});
+    document.getElementById('generateTeamButton').addEventListener('click', () => {
+        const team = getRandomElement(teams);
+        document.getElementById('team').textContent = team;
+    });
 
-document.getElementById('generateButton').addEventListener('click', () => {
-    const team = getRandomElement(teams);
-    document.getElementById('team').textContent = team;
-});
-
-document.getElementById('generateButton').addEventListener('click', () => {
-    const principal = getRandomElement(principals);
-    document.getElementById('principal').textContent = principal;
+    document.getElementById('generatePrincipalButton').addEventListener('click', () => {
+        const principal = getRandomElement(principals);
+        document.getElementById('principal').textContent = principal;
+    });
 });
