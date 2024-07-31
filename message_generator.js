@@ -54,12 +54,20 @@ function getRandomElement(arr) {
 
 document.getElementById('generateButton').addEventListener('click', () => {
     const driver1 = getRandomElement(drivers);
-    const driver2 = getRandomElement(drivers.filter(driver => driver !== driver1));
-    const team = getRandomElement(teams);
-    const principal = getRandomElement(principals);
-
     document.getElementById('driver1').textContent = driver1;
+});
+
+document.getElementById('generateButton').addEventListener('click', () => {
+    const driver2 = getRandomElement(drivers.filter(driver => driver !== driver1));
     document.getElementById('driver2').textContent = driver2;
+});
+
+document.getElementById('generateButton').addEventListener('click', () => {
+    const team = getRandomElement(teams);
     document.getElementById('team').textContent = team;
+});
+
+document.getElementById('generateButton').addEventListener('click', () => {
+    const principal = getRandomElement(principals);
     document.getElementById('principal').textContent = principal;
 });
