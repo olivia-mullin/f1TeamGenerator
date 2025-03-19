@@ -1,0 +1,12 @@
+{
+  "name": "f1teamgenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "message_generator.js",
+  "scripts": {
+    "dev": "npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
